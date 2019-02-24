@@ -1,3 +1,7 @@
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+
 var left = document.getElementById('l');
 var right = document.getElementById('r');
 var title = document.getElementById('title');
