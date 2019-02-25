@@ -65,17 +65,18 @@ a:hover {
 }
 #main {
     position: absolute;
-    top: 150%;
+    top: 170%;
     text-align: center;
 }
 #music, #dates, #links, #hide {
     width: 25%;
     text-align: center;
     vertical-align: middle;
-    margin-bottom: 100px;
 }
+#music, #dates {margin-bottom: 100px;}
+#links {margin-bottom: 50px;}
 #hide {
-    height: 0px;margin: 0px;
+    height: 0px; margin-bottom: 0px;
 }
 h1 {
     font-size: 20pt;
