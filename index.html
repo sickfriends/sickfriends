@@ -4,7 +4,7 @@
 <body>
 <center>
 <div id="title">
-<img src="https://imagizer.imageshack.com/img924/7299/MIxenH.gif">
+<img src="https://imagizer.imageshack.com/img924/7299/MIxenH.gif" id="sickfriendslogo">
 </div>
 </center>
 <div id="footer">
@@ -61,3 +61,11 @@ posuere cubilia Curae; Pellentesque venenatis maximus varius.
 </body>
 
 <script src="functions.js"></script>
+<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+$( document ).click(function() {
+  $( "#sickfriendslogo" ).effect( "shake" );
+});
+</script>
