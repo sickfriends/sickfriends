@@ -74,9 +74,9 @@ a:hover {
     vertical-align: middle;
 }
 #music, #dates {margin-bottom: 100px;}
-#links {margin-bottom: 50px;}
+#links, #hide {margin-bottom: 0px;}
 #hide {
-    height: 0px; margin-bottom: 0px;
+    height: 0px;
 }
 h1 {
     font-size: 20pt;
