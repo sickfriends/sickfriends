@@ -12,11 +12,32 @@ a, a:link, a:active, a:visited {
     color: #CCCCCC;
     font-size: 8pt;
     letter-spacing: -1px;
-target-name:new;
-target-new:tab;
+    target-name: new;
+    target-new: tab;
 }
 a:hover {
     color: #FFFFFF;
+}
+a.tip {
+    border-bottom: 1px dotted #666666;
+}
+a.tip:hover {
+    position: relative;
+    border-bottom: 1px dotted #FFFFFF;
+}
+a.tip span {
+    display: none;
+}
+a.tip:hover span {
+    text-transform: lowercase;
+    position: absolute;
+    display: block;
+    z-index: 100;
+    padding: 5px;
+    top: 5px;
+    left: 0px;
+    margin: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 #title {
     position: fixed;
