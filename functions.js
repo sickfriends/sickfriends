@@ -21,7 +21,7 @@ var onScroll = (function(){
     }   
     scrollDeltaL = (fromTop - startPos) * -0.25; // left logo speed
     scrollDeltaR = (fromTop - startPos) * 0.25; // right logo speed
-    scrollDeltaTop = (fromTop - startPos) * -0.35; // header/title speed moving up
+    scrollDeltaTop = (fromTop - startPos) * -0.3; // header/title speed moving up
     left.style.transform = `translateX(${scrollDeltaL}px)`;
     right.style.transform = `translateX(${scrollDeltaR}px)`;
     title.style.transform = `translateY(${scrollDeltaTop}px) rotate(${scrollDeltaTop}deg)`;
