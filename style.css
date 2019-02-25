@@ -74,7 +74,7 @@ a:hover {
     vertical-align: middle;
 }
 #music, #dates {margin-bottom: 100px;}
-#links, #hide {margin-bottom: 0px;}
+#links, #hide {margin-bottom: 0px !important;}
 #hide {
     height: 0px;
 }
