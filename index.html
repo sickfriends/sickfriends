@@ -45,7 +45,11 @@
 <img id="music7" class="playa" style="z-index: 213; display: none; top: 10px; right: 220px; width: 200px; height: auto;" src="https://i.imgur.com/NO0sLlN.jpg">
 <a id="pause7" onclick="hide('music7', 'pause7')" style="z-index: 214; display: none; top: 30px; right: 220px; border: none;" class="tip hiddenX">X<span>click to hide</span></a>
 
-
+<a style="top: 420px; left: 90px;" class="secret" onclick="show('music8', 'pause8')"></a>
+<iframe id="music8" class="playa" style="z-index: 215; display: none; top: 420px; left: 90px;" width="280" height="160" src="https://www.youtube.com/embed/YcDn8DFOmMc?rel=1&amp;controls=1&amp;showinfo=0&amp;start=1&autoplay=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br>
+<a id="pause8" onclick="hide('music8', 'pause8')" style="z-index: 216; display: none; top: 420px; left: 370px; border: none;" class="tip hiddenX">X<span>click to hide</span></a>
+  
+  
 <script>
 
 var tag = document.createElement('script');
@@ -69,6 +73,11 @@ function onYouTubeIframeAPIReady() {
       'onReady': onPlayerReady
     }
   });
+  player8 = new YT.Player('music8', {
+    events: {
+      'onReady': onPlayerReady
+    }
+  });
 }
 function onPlayerReady(event) {
   document.getElementById('pause1').addEventListener('click', function() {
@@ -79,6 +88,9 @@ function onPlayerReady(event) {
   });
   document.getElementById('pause3').addEventListener('click', function() {
     player3.pauseVideo();
+  });
+  document.getElementById('pause8').addEventListener('click', function() {
+    player8.pauseVideo();
   });
 }
 function show(playerID, pauseID) {
