@@ -3,6 +3,90 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>sìck҉ ̕fŗi҉en͢d҉s</title></head>
 <body>
+  
+  
+  
+  
+  <style>
+
+.secret {position: fixed; background: none; z-index: 200; display: block; width: 70px; height: 70px; color: #000000}
+.secret:hover {background: none; cursor: pointer;}
+.playa {position: fixed;}
+.hiddenX {position: fixed !important; margin: 0px; width: 40px; height: 0px; background: #000000; font-family: Courier New; padding: 14px 0px 26px 0px; text-align: center; border-radius: 25px; vertical-align: middle;}
+.hiddenX span {font-family: Andale Mono, Courier New; font-size: 7pt;}
+
+</style>
+
+<a style="top: 40px; left: 20px;" class="secret" onclick="show('music1', 'pause1')"></a>
+<iframe id="music1" class="playa" style="z-index: 201; display: none; top: 40px; left: 20px;" width="280" height="160" src="https://www.youtube.com/embed/5ECEVojolTk?rel=1&amp;controls=1&amp;showinfo=0&amp;start=1&autoplay=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br>
+<a id="pause1" onclick="hide('music1', 'pause1')" style="z-index: 202; display: none; top: 40px; left: 270px; border: none;" class="tip hiddenX">X<span>click to hide</span></a>
+
+
+<a style="top: 200px; left: 130px;" class="secret" onclick="show('music2', 'pause2')"></a>
+<iframe id="music2" class="playa" style="z-index: 203; display: none; top: 240px; left: 130px;" width="280" height="160" src="https://www.youtube.com/embed/g5EpilCzZ1Y?rel=1&amp;controls=1&amp;showinfo=0&amp;start=1&autoplay=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br>
+<a id="pause2" onclick="hide('music2', 'pause2')" style="z-index: 204; display: none; top: 240px; left: 350px; border: none;" class="tip hiddenX">X<span>click to hide</span></a>
+
+
+<a style="top: 230px; right: 100px;" class="secret" onclick="show('music3', 'pause3')"></a>
+<iframe id="music3" class="playa" style="z-index: 205; display: none; top: 180px; right: 100px;" width="280" height="160" src="https://www.youtube.com/embed/hKfszAE5CxI?rel=1&amp;controls=1&amp;showinfo=0&amp;start=1&autoplay=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br>
+<a id="pause3" onclick="hide('music3', 'pause3')" style="z-index: 206; display: none; top: 180px; right: 100px; border: none;" class="tip hiddenX">X<span>click to hide</span></a>
+
+
+
+<script>
+
+var tag = document.createElement('script');
+tag.src = 'https://www.youtube.com/iframe_api';
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+var player;
+function onYouTubeIframeAPIReady() {
+  player1 = new YT.Player('music1', {
+    events: {
+      'onReady': onPlayerReady
+    }
+  });
+  player2 = new YT.Player('music2', {
+    events: {
+      'onReady': onPlayerReady
+    }
+  });
+  player3 = new YT.Player('music3', {
+    events: {
+      'onReady': onPlayerReady
+    }
+  });
+}
+function onPlayerReady(event) {
+  document.getElementById('pause1').addEventListener('click', function() {
+    player1.pauseVideo();
+  });
+  document.getElementById('pause2').addEventListener('click', function() {
+    player2.pauseVideo();
+  });
+  document.getElementById('pause3').addEventListener('click', function() {
+    player3.pauseVideo();
+  });
+}
+function show(playerID, pauseID) {
+    var player = document.getElementById(playerID);
+    var pause = document.getElementById(pauseID);
+    player.style.display = "block";
+    pause.style.display = "block";
+}
+function hide(playerID, pauseID) {
+    var player = document.getElementById(playerID);
+    var pause = document.getElementById(pauseID);
+    player.style.display = "none";
+    pause.style.display = "none";
+}
+
+</script>
+  
+  
+  
+  
+  
 <center>
 <div id="title">
 <img src="https://imagizer.imageshack.com/img921/2122/ypGffF.gif" id="sickfriendslogo">
