@@ -3,19 +3,6 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>sìck҉ ̕fŗi҉en͢d҉s</title></head>
 <body>
-  
-  
-  
-  
-  <style>
-
-.secret {position: fixed; background: none; z-index: 200; display: block; width: 70px; height: 70px; color: #000000}
-.secret:hover {background: none; cursor: pointer;}
-.playa {position: fixed;}
-.hiddenX {position: fixed !important; margin: 0px; width: 40px; height: 0px; background: #000000; font-family: Courier New; padding: 14px 0px 26px 0px; text-align: center; border-radius: 25px; vertical-align: middle;}
-.hiddenX span {font-family: Andale Mono, Courier New; font-size: 7pt;}
-
-</style>
 
 <a style="top: 40px; left: 20px;" class="secret" onclick="show('music1', 'pause1')"></a>
 <iframe id="music1" class="playa" style="z-index: 201; display: none; top: 40px; left: 20px;" width="280" height="160" src="https://www.youtube.com/embed/5ECEVojolTk?rel=1&amp;controls=1&amp;showinfo=0&amp;start=1&autoplay=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br>
@@ -52,69 +39,6 @@
 <a style="top: 380px; right: 5px;" class="secret" onclick="show('music9', 'pause9')"></a>
 <img id="music9" class="playa" style="z-index: 217; display: none; top: 400px; right: 15px; width: 180px; height: auto;" src="https://i.imgur.com/Und6ktl.png">
 <a id="pause9" onclick="hide('music9', 'pause9')" style="z-index: 218; display: none; top: 400px; right: 10px; border: none;" class="tip hiddenX">X<span>click to hide</span></a>
-
-
-<script>
-
-var tag = document.createElement('script');
-tag.src = 'https://www.youtube.com/iframe_api';
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-var player;
-function onYouTubeIframeAPIReady() {
-  player1 = new YT.Player('music1', {
-    events: {
-      'onReady': onPlayerReady
-    }
-  });
-  player2 = new YT.Player('music2', {
-    events: {
-      'onReady': onPlayerReady
-    }
-  });
-  player3 = new YT.Player('music3', {
-    events: {
-      'onReady': onPlayerReady
-    }
-  });
-  player8 = new YT.Player('music8', {
-    events: {
-      'onReady': onPlayerReady
-    }
-  });
-}
-function onPlayerReady(event) {
-  document.getElementById('pause1').addEventListener('click', function() {
-    player1.pauseVideo();
-  });
-  document.getElementById('pause2').addEventListener('click', function() {
-    player2.pauseVideo();
-  });
-  document.getElementById('pause3').addEventListener('click', function() {
-    player3.pauseVideo();
-  });
-  document.getElementById('pause8').addEventListener('click', function() {
-    player8.pauseVideo();
-  });
-}
-function show(playerID, pauseID) {
-    var player = document.getElementById(playerID);
-    var pause = document.getElementById(pauseID);
-    player.style.display = "block";
-    pause.style.display = "block";
-}
-function hide(playerID, pauseID) {
-    var player = document.getElementById(playerID);
-    var pause = document.getElementById(pauseID);
-    player.style.display = "none";
-    pause.style.display = "none";
-}
-
-</script>
-  
-  
-  
-  
   
 <center>
 <div id="title">
