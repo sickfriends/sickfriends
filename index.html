@@ -28,6 +28,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
 <script>
 
+var expand = document.getElementById("expand");
+var retract = document.getElementById("retract");
+var secretlinks = document.getElementsByClassName("secret");
+var secretcontent = document.getElementsByClassName("playa");
+var secretX = document.getElementsByClassName("hiddenX");
+
+expand.addEventListener("click", function() {
+    for (var i = 0; i < secretlinks.length; i++) {
+    secretlinks[i].style.visibility = "visible";
+    secretlinks[i].classList.add("secretfade");
+    }
+    expand.style.display = "none";
+    retract.style.display = "block";
+});
+
+retract.addEventListener("click", function() {
+    for (var i = 0; i < secretlinks.length; i++) {
+    secretlinks[i].style.visibility = "hidden";
+    secretlinks[i].classList.remove("secretfade");
+    }
+    for (var i = 0; i < secretcontent.length; i++) {
+    secretcontent[i].style.display = "none";
+    }
+    for (var i = 0; i < secretX.length; i++) {
+    secretX[i].style.display = "none";
+    }
+    expand.style.display = "block";
+    retract.style.display = "none";
+});
+
 var tag = document.createElement('script');
 tag.src = 'https://www.youtube.com/iframe_api';
 var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -59,13 +89,25 @@ function onPlayerReady(event) {
   document.getElementById('pause1').addEventListener('click', function() {
     player1.pauseVideo();
   });
+  retract.addEventListener('click', function() {
+    player1.pauseVideo();
+  });
   document.getElementById('pause2').addEventListener('click', function() {
+    player2.pauseVideo();
+  });
+  retract.addEventListener('click', function() {
     player2.pauseVideo();
   });
   document.getElementById('pause3').addEventListener('click', function() {
     player3.pauseVideo();
   });
+  retract.addEventListener('click', function() {
+    player3.pauseVideo();
+  });
   document.getElementById('pause8').addEventListener('click', function() {
+    player8.pauseVideo();
+  });
+  retract.addEventListener('click', function() {
     player8.pauseVideo();
   });
 }
@@ -81,16 +123,21 @@ function hide(playerID, pauseID) {
     player.style.display = "none";
     pause.style.display = "none";
 }
-  
 </script>
+  
+  
+<a style="z-index: 300; position: fixed; top: 10px; left: 10px;"><img id="expand" src="https://imagizer.imageshack.com/img921/2559/6wOJMU.png" style="width: 40px; height: 34px">
+<img id="retract" src="https://imagizer.imageshack.com/img924/7146/ErRNHm.png"style="display: none; width: 40px; height: 34px"></a>
 
-<a style="top: 40px; left: 20px;" class="secret" onclick="show('music1', 'pause1')"></a>
-<iframe id="music1" class="playa" style="z-index: 201; display: none; top: 40px; left: 20px;" width="280" height="160" src="https://www.youtube.com/embed/5ECEVojolTk?rel=1&amp;controls=1&amp;showinfo=0&amp;start=1&autoplay=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br>
-<a id="pause1" onclick="hide('music1', 'pause1')" style="z-index: 202; display: none; top: 40px; left: 270px; border: none;" class="tip hiddenX">X<span>click to hide</span></a>
+<a id="retract" style="display: none; z-index: 300; position: fixed; top: 10px; left: 10px; font-size: 15pt; font-family: Helvetica Neue; font-weight: 200; letter-spacing: 6px;"><img src="https://imagizer.imageshack.com/img924/7146/ErRNHm.png"style="width: 40px; height: 34px"></a>
 
-<a style="top: 200px; left: 130px;" class="secret" onclick="show('music2', 'pause2')"></a>
-<iframe id="music2" class="playa" style="z-index: 203; display: none; top: 240px; left: 130px;" width="280" height="160" src="https://www.youtube.com/embed/g5EpilCzZ1Y?rel=1&amp;controls=1&amp;showinfo=0&amp;start=1&autoplay=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br>
-<a id="pause2" onclick="hide('music2', 'pause2')" style="z-index: 204; display: none; top: 240px; left: 350px; border: none;" class="tip hiddenX">X<span>click to hide</span></a>
+<a style="top: 40px; left: 120px;" class="secret" onclick="show('music1', 'pause1')"></a>
+<iframe id="music1" class="playa" style="z-index: 201; display: none; top: 40px; left: 40px;" width="280" height="160" src="https://www.youtube.com/embed/5ECEVojolTk?rel=1&amp;controls=1&amp;showinfo=0&amp;start=1&autoplay=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br>
+<a id="pause1" onclick="hide('music1', 'pause1')" style="z-index: 202; display: none; top: 40px; left: 240px; border: none;" class="tip hiddenX">X<span>click to hide</span></a>
+
+<a style="top: 200px; left: 80px;" class="secret" onclick="show('music2', 'pause2')"></a>
+<iframe id="music2" class="playa" style="z-index: 203; display: none; top: 200px; left: 80px;" width="280" height="160" src="https://www.youtube.com/embed/g5EpilCzZ1Y?rel=1&amp;controls=1&amp;showinfo=0&amp;start=1&autoplay=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br>
+<a id="pause2" onclick="hide('music2', 'pause2')" style="z-index: 204; display: none; top: 200px; left: 310px; border: none;" class="tip hiddenX">X<span>click to hide</span></a>
 
 <a style="top: 270px; right: 100px;" class="secret" onclick="show('music3', 'pause3')"></a>
 <iframe id="music3" class="playa" style="z-index: 205; display: none; top: 220px; right: 100px;" width="280" height="160" src="https://www.youtube.com/embed/hKfszAE5CxI?rel=1&amp;controls=1&amp;showinfo=0&amp;start=1&autoplay=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br>
@@ -100,25 +147,26 @@ function hide(playerID, pauseID) {
 <img id="music4" class="playa" style="z-index: 207; display: none; top: 420px; right: 200px; width: 200px; height: auto;" src="https://i.imgur.com/iFmMV3d.jpg">
 <a id="pause4" onclick="hide('music4', 'pause4')" style="z-index: 228; display: none; top: 420px; right: 170px; border: none;" class="tip hiddenX">X<span>click to hide</span></a>
 
-<a style="top: 280px; left: 0px;" class="secret" onclick="show('music5', 'pause5')"></a>
-<img id="music5" class="playa" style="z-index: 209; display: none; top: 280px; left: 10px; width: 100px; height: auto;" src="https://i.imgur.com/4Frg4Kq.jpg">
-<a id="pause5" onclick="hide('music5', 'pause5')" style="z-index: 210; display: none; top: 280px; left: 90px; border: none;" class="tip hiddenX">X<span>click to hide</span></a>
+<a style="top: 80px; right: 50px;" class="secret" onclick="show('music5', 'pause5')"></a>
+<img id="music5" class="playa" style="z-index: 209; display: none; top: 80px; right: 50px; width: 100px; height: auto;" src="https://i.imgur.com/4Frg4Kq.jpg">
+<a id="pause5" onclick="hide('music5', 'pause5')" style="z-index: 210; display: none; top: 80px; right: 20px; border: none;" class="tip hiddenX">X<span>click to hide</span></a>
 
-<a style="top: 30px; left: 340px;" class="secret" onclick="show('music6', 'pause6')"></a>
-<img id="music6" class="playa" style="z-index: 211; display: none; top: 30px; left: 340px; width: 120px; height: auto;" src="https://i.imgur.com/aVh1fHN.jpg">
-<a id="pause6" onclick="hide('music6', 'pause6')" style="z-index: 212; display: none; top: 30px; left: 450px; border: none;" class="tip hiddenX">X<span>click to hide</span></a>
+<a style="top: 150px; left: 340px;" class="secret" onclick="show('music6', 'pause6')"></a>
+<img id="music6" class="playa" style="z-index: 211; display: none; top: 10px; left: 340px; width: 120px; height: auto;" src="https://i.imgur.com/aVh1fHN.jpg">
+<a id="pause6" onclick="hide('music6', 'pause6')" style="z-index: 212; display: none; top: 10px; left: 450px; border: none;" class="tip hiddenX">X<span>click to hide</span></a>
 
-<a style="top: 10px; right: 220px;" class="secret" onclick="show('music7', 'pause7')"></a>
+<a style="top: 120px; right: 280px;" class="secret" onclick="show('music7', 'pause7')"></a>
 <img id="music7" class="playa" style="z-index: 213; display: none; top: 10px; right: 220px; width: 200px; height: auto;" src="https://i.imgur.com/NO0sLlN.jpg">
 <a id="pause7" onclick="hide('music7', 'pause7')" style="z-index: 214; display: none; top: 30px; right: 220px; border: none;" class="tip hiddenX">X<span>click to hide</span></a>
 
-<a style="top: 420px; left: 90px;" class="secret" onclick="show('music8', 'pause8')"></a>
-<iframe id="music8" class="playa" style="z-index: 215; display: none; top: 420px; left: 90px;" width="280" height="160" src="https://www.youtube.com/embed/YcDn8DFOmMc?rel=1&amp;controls=1&amp;showinfo=0&amp;start=1&autoplay=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br>
-<a id="pause8" onclick="hide('music8', 'pause8')" style="z-index: 216; display: none; top: 420px; left: 370px; border: none;" class="tip hiddenX">X<span>click to hide</span></a>
+<a style="top: 390px; left: 190px;" class="secret" onclick="show('music8', 'pause8')"></a>
+<iframe id="music8" class="playa" style="z-index: 215; display: none; top: 390px; left: 80px;" width="280" height="160" src="https://www.youtube.com/embed/YcDn8DFOmMc?rel=1&amp;controls=1&amp;showinfo=0&amp;start=1&autoplay=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br>
+<a id="pause8" onclick="hide('music8', 'pause8')" style="z-index: 216; display: none; top: 390px; left: 330px; border: none;" class="tip hiddenX">X<span>click to hide</span></a>
   
-<a style="top: 380px; right: 5px;" class="secret" onclick="show('music9', 'pause9')"></a>
+<a style="top: 480px; right: 105px;" class="secret" onclick="show('music9', 'pause9')"></a>
 <img id="music9" class="playa" style="z-index: 217; display: none; top: 400px; right: 15px; width: 180px; height: auto;" src="https://i.imgur.com/Und6ktl.png">
 <a id="pause9" onclick="hide('music9', 'pause9')" style="z-index: 218; display: none; top: 400px; right: 10px; border: none;" class="tip hiddenX">X<span>click to hide</span></a>
+  
   
 <center>
 <div id="title">
