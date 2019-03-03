@@ -122,7 +122,7 @@ b {
 
 #expand, #retract {opacity: 0.4;}
 
-.secret {display: block; position: fixed; background: #222222; z-index: 200; width: 20px; height: 20px; color: #000000; border-radius: 20px; opacity: 0; transition: opacity 1s, background 0.5s;}
+.secret {display: block; position: fixed; background: #161616; z-index: 200; width: 20px; height: 20px; color: #000000; border-radius: 20px; opacity: 0; transition: opacity 1s, background 0.5s;}
 .secretfade {opacity: 1;}
 .secret:hover {background: none; cursor: pointer;}
 .playa {position: fixed;}
