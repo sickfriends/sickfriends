@@ -120,7 +120,10 @@ b {
     font-size: 15pt;
 }
 
-.secret {position: fixed; background: none; z-index: 200; display: block; width: 70px; height: 70px; color: #000000}
+#expand, #retract {opacity: 0.4;}
+
+.secret {display: block; position: fixed; background: #222222; z-index: 200; width: 20px; height: 20px; color: #000000; border-radius: 20px; opacity: 0; transition: opacity 1s, background 0.5s;}
+.secretfade {opacity: 1;}
 .secret:hover {background: none; cursor: pointer;}
 .playa {position: fixed;}
 .hiddenX {position: fixed !important; margin: 0px; width: 40px; height: 0px; background: #000000; font-family: Courier New; padding: 14px 0px 26px 0px; text-align: center; border-radius: 25px; vertical-align: middle;}
